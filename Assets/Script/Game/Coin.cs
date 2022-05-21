@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Coin : MonoBehaviour
+{
+    private int coins = 0;
+
+    [SerializeField] private Text CoinsText;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            coins++;
+            CoinsText.text = "" + coins;
+        }
+        /*
+        if(collision.transform.tag == "Player")
+        {
+            PlayerManager.numberOfCoins++;
+            PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
+            Destroy(gameObject);
+            Debug.Log("Coins: ");
+        } 
+        */
+    }
+}
