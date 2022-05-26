@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Golem
   - Ground
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - 
   - Player
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -43,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 583623725
+    locked: 0
+  - name: Foreground
+    uniqueID: 3367131773
+    locked: 0
+  - name: Player
+    uniqueID: 3998886273
+    locked: 0
+  - name: Ground
+    uniqueID: 4161782527
     locked: 0

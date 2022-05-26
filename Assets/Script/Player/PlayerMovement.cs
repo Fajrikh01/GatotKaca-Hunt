@@ -9,11 +9,15 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+    private float horizontalInput;
+
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
+
+    bool doubleJump;
 
     private enum MovementState { idle, walking, jumping, falling }
 
@@ -30,10 +34,20 @@ public class PlayerMovement : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        if(Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if (IsGrounded())
+            {
+                Jump();
+                doubleJump = true;
+                
+            }else if (doubleJump)
+            {
+                Jump();
+                doubleJump = false;
+            }
         }
+        
 
         UpdateAnimationUpdate();
     }
@@ -72,5 +86,16 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
+
+    
+    public bool canAttack()
+    {
+        return horizontalInput == 0 && IsGrounded();
     }
 }
