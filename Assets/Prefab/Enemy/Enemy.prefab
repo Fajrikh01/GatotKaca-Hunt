@@ -70,9 +70,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2463300888722095327}
   - component: {fileID: 2463300888722095326}
+  - component: {fileID: 2463300888722095265}
   - component: {fileID: 2463300888722095325}
   - component: {fileID: 2463300888722095266}
-  - component: {fileID: 2463300888722095265}
   - component: {fileID: 2463300888722095267}
   m_Layer: 10
   m_Name: Enemy
@@ -146,6 +146,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2463300888722095265
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463300888722095324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.052693427, y: -0.40924478}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.2, y: 4.8}
+    newSize: {x: 7.2, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7495047, y: 3.3576393}
+  m_EdgeRadius: 0
 --- !u!95 &2463300888722095325
 Animator:
   serializedVersion: 3
@@ -178,40 +204,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  range: -2.67
-  damage: 74
-  colliderDistance: -1.19
+  range: 1.46
+  damage: 3.34
+  colliderDistance: 1.25
   boxCollider: {fileID: 2463300888722095265}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   maxHealt: 100
---- !u!61 &2463300888722095265
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2463300888722095324}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.052576303, y: -0.38119018}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.2, y: 4.8}
-    newSize: {x: 7.2, y: 4.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6793256, y: 3.3015301}
-  m_EdgeRadius: 0
 --- !u!114 &2463300888722095267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 10
-  anim: {fileID: 2463300888722095325}
+  anim: {fileID: 0}
 --- !u!1 &2463300888855885103
 GameObject:
   m_ObjectHideFlags: 0

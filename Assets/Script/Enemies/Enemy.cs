@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private int damage;
+    [SerializeField] private float damage;
 
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance;
@@ -75,6 +75,7 @@ public class Enemy : MonoBehaviour
     {
         // Play an attack animation
         cooldownTimer = 0;
+        SoundManager.instance.Play("EnemyAttack");
         animator.SetTrigger("attack");
     }
 
@@ -93,6 +94,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealt -= damage;
 
+        SoundManager.instance.Play("Damage");
         animator.SetTrigger("damage");
 
         if(currentHealt <= 0)
@@ -106,9 +108,9 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died!");
 
         animator.SetTrigger("death");
-        //animator.SetBool("isDead", true);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        Destroy(gameObject, 5f);
     }
 }

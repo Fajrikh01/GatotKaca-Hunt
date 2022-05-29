@@ -18,7 +18,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header("Idle Behaviour")]
     [SerializeField] private float idleDuration;
-    private float idleTImer;
+    private float idleTimer;
 
     [Header("Enemy Animator")]
     [SerializeField] private Animator animator;
@@ -33,12 +33,11 @@ public class EnemyPatrol : MonoBehaviour
         animator.SetBool("isChasing", false);
     }
 
-
     private void Update()
     {
         if (movingLeft)
         {
-            if(enemy.position.x >= leftEdge.position.x)
+            if (enemy.position.x >= leftEdge.position.x)
                 MoveInDirection(-1);
             else
                 DirectionChange();
@@ -51,20 +50,20 @@ public class EnemyPatrol : MonoBehaviour
                 DirectionChange();
         }
     }
-
+    
     private void DirectionChange()
     {
         animator.SetBool("isChasing", false);
 
-        idleTImer += Time.deltaTime;
+        idleTimer += Time.deltaTime;
 
-        if(idleTImer > idleDuration)
+        if(idleTimer > idleDuration)
             movingLeft = !movingLeft;
     }
 
     private void MoveInDirection(int _direction)
     {
-        idleTImer = 0;
+        idleTimer = 0;
         animator.SetBool("isChasing", true);
 
         //Make enemy face direction

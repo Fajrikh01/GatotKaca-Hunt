@@ -25,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                SoundManager.instance.Play("Attack");
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -53,27 +54,5 @@ public class PlayerAttack : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange * transform.localScale.x);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealt -= damage;
-
-        animator.SetTrigger("hurt");
-
-        if (currentHealt <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log("Player died!");
-
-        animator.SetTrigger("die");
-
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
     }
 }

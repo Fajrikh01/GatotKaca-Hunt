@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        SoundManager.instance.Play("Jump");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 

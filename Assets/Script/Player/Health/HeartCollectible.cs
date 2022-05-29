@@ -10,6 +10,7 @@ public class HeartCollectible : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            SoundManager.instance.Play("Heart");
             collision.GetComponent<Health>().AddHealth(healthValue);
             gameObject.SetActive(false);
         }

@@ -22,8 +22,8 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            SoundManager.instance.Play("Hurt");
             anim.SetTrigger("hurt");
-            //iframes
         }
         else
         {
@@ -32,6 +32,8 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
+                PlayerManager.isGameOver = true;
+                Destroy(gameObject, 1f);
             }
         }
     }

@@ -13,6 +13,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Coin"))
         {
+            SoundManager.instance.Play("Coins");
             Destroy(collision.gameObject);
             coins++;
             CoinsText.text = "" + coins;
