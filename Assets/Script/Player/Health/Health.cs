@@ -42,4 +42,13 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Trap")
+        {
+            Debug.Log("Damage");
+            TakeDamage(3.34f);
+        }
+    }
 }

@@ -5,27 +5,14 @@ using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
-    private int coins = 0;
-
-    [SerializeField] private Text CoinsText;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Coin"))
+        if (collision.transform.tag == "Player")
         {
             SoundManager.instance.Play("Coins");
-            Destroy(collision.gameObject);
-            coins++;
-            CoinsText.text = "" + coins;
-        }
-        /*
-        if(collision.transform.tag == "Player")
-        {
             PlayerManager.numberOfCoins++;
             PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
             Destroy(gameObject);
-            Debug.Log("Coins: ");
-        } 
-        */
+        }
     }
 }
