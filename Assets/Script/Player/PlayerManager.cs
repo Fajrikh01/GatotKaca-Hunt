@@ -39,6 +39,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ReplayLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
