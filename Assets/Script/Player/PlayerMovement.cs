@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
 
     bool doubleJump;
+    bool moveLeft;
+    bool moveRight;
 
     private enum MovementState { idle, walking, jumping, falling }
 
@@ -27,13 +29,29 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<CapsuleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
+        //moveLeft = false;
+        //moveRight = false;
     }
+
+    /*
+    public void keKiri()
+    {
+        moveLeft = true;
+    }
+
+    public void keKanan()
+    {
+        moveRight = true;
+    }
+    */
 
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
+        
         if(Input.GetButtonDown("Jump"))
         {
             if (IsGrounded())
@@ -48,12 +66,27 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+        
 
         UpdateAnimationUpdate();
     }
 
     private void UpdateAnimationUpdate()
     {
+        /*
+        if (moveLeft)
+        {
+            horizontalInput = -moveSpeed;
+        }
+        else if (moveRight)
+        {
+            horizontalInput = moveSpeed;
+        }
+        else
+        {
+            horizontalInput = 0;
+        }
+        */
         MovementState state;
 
         if (dirX > 0f)
@@ -81,17 +114,29 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)state);
+        
     }
+
+    /*
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontalInput, rb.velocity.y);
+    }
+    */
 
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
-    void Jump()
+    public void Jump()
     {
-        SoundManager.instance.Play("Jump");
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            SoundManager.instance.Play("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            //rb.AddForce(Vector2.up * jumpForce);
+            //UpdateAnimationUpdate();
+        
+        
     }
 
     

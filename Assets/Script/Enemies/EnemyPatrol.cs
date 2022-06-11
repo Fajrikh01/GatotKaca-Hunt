@@ -23,6 +23,8 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Enemy Animator")]
     [SerializeField] private Animator animator;
 
+    [SerializeField] SpriteRenderer spriteRenderer;
+
     private void Awake()
     {
         initScale = enemy.localScale;
@@ -38,14 +40,22 @@ public class EnemyPatrol : MonoBehaviour
         if (movingLeft)
         {
             if (enemy.position.x >= leftEdge.position.x)
+            {
+                spriteRenderer.flipX = true;
                 MoveInDirection(-1);
+            }
+                
             else
                 DirectionChange();
         }
         else
         {
             if (enemy.position.x <= rightEdge.position.x)
+            {
+                spriteRenderer.flipX = false;
                 MoveInDirection(1);
+            }
+                
             else
                 DirectionChange();
         }
@@ -73,4 +83,5 @@ public class EnemyPatrol : MonoBehaviour
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
             enemy.position.y, enemy.position.z);
     }
+ 
 }

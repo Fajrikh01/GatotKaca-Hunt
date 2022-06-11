@@ -965,7 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 1803803460}
   pauseMenuScreen: {fileID: 1343239006}
-  coinsText: {fileID: 0}
+  coinsText: {fileID: 894949812}
   VCam: {fileID: 1089198040}
   playerPrefabs:
   - {fileID: 1802344890234686116, guid: 376b1b2f8a5f15443b41373dc3763c44, type: 3}
@@ -2943,7 +2943,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 10
   anim: {fileID: 0}
-  playerPrefabs: []
 --- !u!114 &813610467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2951,7 +2950,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813610461}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b52f842ce992fbb44b94d02a3b4d8f3d, type: 3}
   m_Name: 
@@ -2972,7 +2971,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813610461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa04915d8f4be46489aa654c7f392f1e, type: 3}
   m_Name: 
@@ -3166,6 +3165,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc818902040bd042abbf86c32ca0cb4, type: 3}
+--- !u!114 &894949812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8925791113859004693, guid: 0cd24a19f1d5eb24ca982c6392f8b555,
+    type: 3}
+  m_PrefabInstance: {fileID: 124971431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &916833077
 GameObject:
   m_ObjectHideFlags: 0
@@ -5260,6 +5271,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 668416655}
     m_Modifications:
+    - target: {fileID: 3056097342455692376, guid: 74a0c7fa67682e746bc3439b6a0c9901,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 269980953}
+    - target: {fileID: 3056097342455692376, guid: 74a0c7fa67682e746bc3439b6a0c9901,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
     - target: {fileID: 3056097342455692382, guid: 74a0c7fa67682e746bc3439b6a0c9901,
         type: 3}
       propertyPath: m_Name
@@ -12386,9 +12407,9 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 1.1, y: 1.1, z: 0}
+  m_ChunkCullingBounds: {x: 1.5, y: 1.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0

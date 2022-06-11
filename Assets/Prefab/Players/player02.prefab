@@ -126,8 +126,9 @@ GameObject:
   - component: {fileID: 8327749299798706}
   - component: {fileID: 8327749299798705}
   - component: {fileID: 8327749299798704}
+  - component: {fileID: 6005402983131451676}
   m_Layer: 8
-  m_Name: Pirate
+  m_Name: player02
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,8 +252,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22660756, y: -0.08292274}
-  m_Size: {x: 0.35781878, y: 0.91715753}
+  m_Offset: {x: -0.22533846, y: -0.08927226}
+  m_Size: {x: 0.3998537, y: 0.92985654}
   m_Direction: 0
 --- !u!114 &8327749299798707
 MonoBehaviour:
@@ -318,6 +319,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 10
   anim: {fileID: 8327749299798710}
+--- !u!61 &6005402983131451676
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327749299798719}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19228187, y: -0.09143895}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.471111, y: 1.3922222}
+    newSize: {x: 0.43, y: 0.93}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4061656, y: 0.91352594}
+  m_EdgeRadius: 0
 --- !u!1 &8327750352287595
 GameObject:
   m_ObjectHideFlags: 0

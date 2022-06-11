@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Trap
   - Boss
+  - Heart
   layers:
   - Default
   - TransparentFX

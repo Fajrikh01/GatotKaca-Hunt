@@ -9,20 +9,21 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject pauseMenuScreen;
 
-    public static Vector2 lastCheckPointPos = new Vector2(-7, 0);
+    //public static Vector2 lastCheckPointPos = new Vector2(-8, 2);
 
     public static int numberOfCoins;
     public Text coinsText;
 
+    public PlayerMovement playerMove;
     public CinemachineVirtualCamera VCam;
     public GameObject[] playerPrefabs;
     int characterIndex;
 
     private void Awake()
     {
-        characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
-        GameObject player = Instantiate(playerPrefabs[characterIndex], lastCheckPointPos, Quaternion.identity);
-        VCam.m_Follow = player.transform;
+        //characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
+        //GameObject player = Instantiate(playerPrefabs[characterIndex], lastCheckPointPos, Quaternion.identity);
+        //VCam.m_Follow = player.transform;
 
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;

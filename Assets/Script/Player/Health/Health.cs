@@ -10,6 +10,19 @@ public class Health : MonoBehaviour
     public Animator anim;
     private bool dead;
 
+    //public GameObject respawnPrefab;
+    //public GameObject respawn;
+
+        /*
+    private void Start()
+    {
+        if (respawn == null)
+            respawn = GameObject.FindWithTag("Heart");
+
+        Instantiate(respawnPrefab, respawn.transform.position, respawn.transform.rotation);
+    }
+    */
+
     private void Awake()
     {
         currentHealth = startingHealth;
