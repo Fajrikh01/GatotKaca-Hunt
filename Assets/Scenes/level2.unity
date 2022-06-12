@@ -2592,6 +2592,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 539564501}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &539564504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1802344890234686125, guid: 376b1b2f8a5f15443b41373dc3763c44,
+    type: 3}
+  m_PrefabInstance: {fileID: 539564501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7e8e768f0efd640bf7289c794b708b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &539564505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1802344890234686131, guid: 376b1b2f8a5f15443b41373dc3763c44,
+    type: 3}
+  m_PrefabInstance: {fileID: 539564501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8e6b216d6605d47a5d1d549b667dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &550887378
 GameObject:
   m_ObjectHideFlags: 0
@@ -5763,9 +5787,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  range: 1.46
+  range: 2.85
   damage: 3.34
-  colliderDistance: 1.25
+  colliderDistance: 0
   boxCollider: {fileID: 1290229185}
   playerLayer:
     serializedVersion: 2
@@ -6347,7 +6371,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424022607
 GameObject:
@@ -14365,6 +14389,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: button
       objectReference: {fileID: 0}
+    - target: {fileID: 2610786086056777978, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539564505}
+    - target: {fileID: 2610786086056777978, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610786086641824616, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539564504}
+    - target: {fileID: 2610786086641824616, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929381157982613919, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539564504}
+    - target: {fileID: 7929381157982613919, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PointerDownRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929381157982613919, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539564504}
+    - target: {fileID: 7929381157982613919, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PointerUpRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861023299567839751, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539564504}
+    - target: {fileID: 8861023299567839751, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PointerDownLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861023299567839751, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 539564504}
+    - target: {fileID: 8861023299567839751, guid: 00a73e5090b569a4499f5a88cb730617,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PointerUpLeft
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00a73e5090b569a4499f5a88cb730617, type: 3}
 --- !u!224 &1861934091 stripped
@@ -16336,9 +16420,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  range: 1.46
+  range: 2.85
   damage: 3.34
-  colliderDistance: 1.25
+  colliderDistance: 0
   boxCollider: {fileID: 2463300888435505642}
   playerLayer:
     serializedVersion: 2

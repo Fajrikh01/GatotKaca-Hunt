@@ -8,18 +8,17 @@ public class PlayerMovement : MonoBehaviour
     private CapsuleCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
-
-    private float horizontalInput;
-
+    
     [SerializeField] private LayerMask jumpableGround;
 
-    private float dirX = 0f;
+    //private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
-    bool doubleJump;
-    bool moveLeft;
-    bool moveRight;
+    private bool doubleJump;
+    private bool moveLeft;
+    private bool moveRight;
+    private float horizontalInput;
 
     private enum MovementState { idle, walking, jumping, falling }
 
@@ -30,77 +29,57 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
-        //moveLeft = false;
-        //moveRight = false;
+        moveLeft = false;
+        moveRight = false;
     }
 
-    /*
-    public void keKiri()
+    public void PointerDownLeft()
     {
         moveLeft = true;
     }
 
-    public void keKanan()
+    public void PointerUpLeft()
+    {
+        moveLeft = false;
+    }
+
+    public void PointerDownRight()
     {
         moveRight = true;
     }
-    */
+
+    public void PointerUpRight()
+    {
+        moveRight = false;
+    }
 
     private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
-        
-        if(Input.GetButtonDown("Jump"))
-        {
-            if (IsGrounded())
-            {
-                Jump();
-                doubleJump = true;
-                
-            }else if (doubleJump)
-            {
-                Jump();
-                doubleJump = false;
-            }
-        }
-        
-        
-
+        //dirX = Input.GetAxisRaw("Horizontal");
+        //rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalInput, rb.velocity.y);
         UpdateAnimationUpdate();
     }
 
     private void UpdateAnimationUpdate()
     {
-        /*
-        if (moveLeft)
-        {
-            horizontalInput = -moveSpeed;
-        }
-        else if (moveRight)
-        {
-            horizontalInput = moveSpeed;
-        }
-        else
-        {
-            horizontalInput = 0;
-        }
-        */
         MovementState state;
 
-        if (dirX > 0f)
+        if (moveRight)
         {
+            horizontalInput = moveSpeed;
             state = MovementState.walking;
             sprite.flipX = false;
         }
-        else if (dirX < 0f)
+        else if (moveLeft)
         {
+            horizontalInput = -moveSpeed;
             state = MovementState.walking;
             sprite.flipX = true;
         }
         else
         {
+            horizontalInput = 0;
             state = MovementState.idle;
         }
 
@@ -117,13 +96,6 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    /*
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(horizontalInput, rb.velocity.y);
-    }
-    */
-
     private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
@@ -131,14 +103,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-            SoundManager.instance.Play("Jump");
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            //rb.AddForce(Vector2.up * jumpForce);
-            //UpdateAnimationUpdate();
-        
-        
-    }
+        if (IsGrounded())
+        {
+            dbJump();
+            doubleJump = true;
 
+        }
+        else if (doubleJump)
+        {
+            dbJump();
+            doubleJump = false;
+        }
+    }
+    
+    void dbJump()
+    {
+        SoundManager.instance.Play("Jump");
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
     
     public bool canAttack()
     {

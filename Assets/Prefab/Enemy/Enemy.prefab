@@ -204,9 +204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  range: 2.66
+  range: 2.85
   damage: 3.34
-  colliderDistance: 0.09
+  colliderDistance: 0
   boxCollider: {fileID: 2463300888722095265}
   playerLayer:
     serializedVersion: 2

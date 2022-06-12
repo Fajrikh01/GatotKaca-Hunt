@@ -7,7 +7,7 @@ public class Demon : MonoBehaviour
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private float damage;
+    [SerializeField] private float bossDamage;
 
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance;
@@ -68,7 +68,7 @@ public class Demon : MonoBehaviour
     private void DamagePlayer()
     {
         if (PlayerInSight())
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(bossDamage);
     }
 
     void Attack()
@@ -81,7 +81,7 @@ public class Demon : MonoBehaviour
 
 
     //public Animator animator;
-    public int maxHealt = 100;
+    public int maxHealt = 200;
     int currentHealt;
 
     // Start is called before the first frame update
@@ -92,7 +92,7 @@ public class Demon : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
-        currentHealt -= 20;
+        currentHealt -= damage;
 
         SoundManager.instance.Play("Damage");
         animator.SetTrigger("damage");

@@ -5,8 +5,8 @@ using UnityEngine;
 public class DemonPatrol : MonoBehaviour
 {
     [Header("Patrol Points")]
-    [SerializeField] private Transform leftEdge;
-    [SerializeField] private Transform rightEdge;
+    //[SerializeField] private Transform leftEdge;
+    //[SerializeField] private Transform rightEdge;
 
     [Header("Enemy")]
     [SerializeField] private Transform enemy;
@@ -33,6 +33,7 @@ public class DemonPatrol : MonoBehaviour
         animator.SetBool("isChasing", false);
     }
 
+    /*
     private void Update()
     {
         if (movingLeft)
@@ -50,6 +51,7 @@ public class DemonPatrol : MonoBehaviour
                 DirectionChange();
         }
     }
+    */
     
     private void DirectionChange()
     {
@@ -57,8 +59,8 @@ public class DemonPatrol : MonoBehaviour
 
         idleTimer += Time.deltaTime;
 
-        if(idleTimer > idleDuration)
-            movingLeft = !movingLeft;
+        //if(idleTimer > idleDuration)
+          //  movingLeft = !movingLeft;
     }
 
     private void MoveInDirection(int _direction)
