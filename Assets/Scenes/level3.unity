@@ -829,12 +829,12 @@ PrefabInstance:
     - target: {fileID: 8925791113986355463, guid: 0cd24a19f1d5eb24ca982c6392f8b555,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 119.99997
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 8925791113986355463, guid: 0cd24a19f1d5eb24ca982c6392f8b555,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -130
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 8925791113986355463, guid: 0cd24a19f1d5eb24ca982c6392f8b555,
         type: 3}
@@ -966,12 +966,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1803803460}
   pauseMenuScreen: {fileID: 1343239006}
   coinsText: {fileID: 894949812}
-  playerMove: {fileID: 0}
   VCam: {fileID: 1089198040}
-  playerPrefabs:
-  - {fileID: 1802344890234686116, guid: 376b1b2f8a5f15443b41373dc3763c44, type: 3}
-  - {fileID: 8327749299798719, guid: a0de1de3d6c28c24fabce4cd6819240e, type: 3}
-  - {fileID: 8279695743911420242, guid: b9033988b89367844ad780052ee87529, type: 3}
 --- !u!4 &269980954
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: 2610786084781543164, guid: 00a73e5090b569a4499f5a88cb730617,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1280
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2610786084781543164, guid: 00a73e5090b569a4499f5a88cb730617,
         type: 3}
@@ -2247,7 +2242,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.65
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3381,7 +3376,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4993805, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5368,22 +5363,22 @@ PrefabInstance:
     - target: {fileID: 3056097342455692383, guid: 74a0c7fa67682e746bc3439b6a0c9901,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -30
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3056097342455692383, guid: 74a0c7fa67682e746bc3439b6a0c9901,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3056097342455692383, guid: 74a0c7fa67682e746bc3439b6a0c9901,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 3056097342455692383, guid: 74a0c7fa67682e746bc3439b6a0c9901,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 3056097342455692383, guid: 74a0c7fa67682e746bc3439b6a0c9901,
         type: 3}
@@ -11883,12 +11878,12 @@ PrefabInstance:
     - target: {fileID: 7496202078032994600, guid: b9d2cfc78d6774c448f869561595035d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7496202078032994600, guid: b9d2cfc78d6774c448f869561595035d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7496202078032994600, guid: b9d2cfc78d6774c448f869561595035d,
         type: 3}

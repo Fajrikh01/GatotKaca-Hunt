@@ -14,10 +14,10 @@ public class PlayerManager : MonoBehaviour
     public static int numberOfCoins;
     public Text coinsText;
 
-    public PlayerMovement playerMove;
+    //public PlayerMovement playerMove;
     public CinemachineVirtualCamera VCam;
-    public GameObject[] playerPrefabs;
-    int characterIndex;
+    //public GameObject[] playerPrefabs;
+    //int characterIndex;
 
     private void Awake()
     {

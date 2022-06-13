@@ -202,8 +202,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.054612756, y: -0.03824476}
-  m_Size: {x: 0.22283316, y: 0.8278016}
+  m_Offset: {x: 0.054612756, y: -0.033805292}
+  m_Size: {x: 0.22283316, y: 0.8189227}
   m_Direction: 0
 --- !u!114 &1802344890234686125
 MonoBehaviour:
@@ -251,6 +251,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
+  bossLayers:
+    serializedVersion: 2
+    m_Bits: 0
   attackRange: 0.43
   attackDamage: 40
   attackRate: 2
